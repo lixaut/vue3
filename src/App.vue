@@ -1,34 +1,43 @@
 <template>
   <h1>我是App组件</h1>
-  <h2>姓名：{{name}}</h2>
-  <h2>年龄：{{age}}</h2>
-  <button @click="sayHello">说话</button>
+  <h2>姓名：{{persion.name}}</h2>
+  <h2>年龄：{{persion.age}}</h2>
+  <h2>职业：{{persion.job.type}}</h2>
+  <h2>薪水：{{persion.job.salary}}</h2>
+  <h2>薪水：{{persion.hobby}}</h2>
+  <button @click="changeInfo">修改人的信息</button>
 </template>
 
 <script>
-import { h } from 'vue'
+import { reactive } from 'vue'
 export default {
   name: 'App',
-  // 暂时不考虑响应式
   setup() {
-    // 数据
-    let name = '李四'
-    let age = 18
+    // 数据：源对象 => 代理对象
+    const persion = reactive({
+      name: '张三',
+      age: 18,
+      job: {
+        type: 'dev',
+        salary: '10k'
+      },
+      hobby: ['抽烟', '喝酒', '烫头']
+    })
 
     // 方法
-    function sayHello() {
-      alert(`我叫${name}，我今年${age}岁了！`)
+    function changeInfo() {
+      persion.name = '李四'
+      persion.age = 20
+      persion.job.type = 'frontEnd'
+      persion.job.salary = '20k'
+      persion.hobby[0] = '学习'
     }
 
-    // 返回一个对象（常用）
+    // 返回对象0
     return {
-      name,
-      age,
-      sayHello
+      persion,
+      changeInfo
     }
-
-    // 返回一个函数（渲染函数）
-    // return () => h('h1', '李四')
   }
 }
 </script>
