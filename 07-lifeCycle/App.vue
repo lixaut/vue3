@@ -5,12 +5,16 @@
 </template>
 
 <script>
-import {  } from 'vue'
+import { ref } from 'vue'
 import Demo from '@/components/Demo.vue'
 export default {
   name: 'App',
   components: { Demo },
   setup() {
+    let isShowDemo = ref(true)
+    return {
+      isShowDemo
+    }
   }
 }
 </script>
