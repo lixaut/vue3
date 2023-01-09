@@ -1,4 +1,6 @@
 <template>
+  <button></button>
+  <hr>
 </template>
 
 <script>
