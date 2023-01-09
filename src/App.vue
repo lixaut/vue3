@@ -1,7 +1,9 @@
 <template>
-  <button @click="isShowDemo=!isShowDemo">卸载Demo</button>
-  <hr>
-  <Demo v-if="isShowDemo"/>
+  <div class="app">
+    <h1>app组件</h1>
+    <button @click="isShowDemo=!isShowDemo">卸载Demo</button>
+    <Demo v-if="isShowDemo"/>
+  </div>
 </template>
 
 <script>
@@ -13,11 +15,15 @@ export default {
   setup() {
     let isShowDemo = ref(true)
     return {
-      isShowDemo
+      isShowDemo,
     }
   }
 }
 </script>
 
-<style>
+<style lang="css" scoped>
+.app {
+  background-color: pink;
+  padding: 10px;
+}
 </style>

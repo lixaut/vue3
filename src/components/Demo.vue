@@ -1,6 +1,7 @@
 <template>
-  <button></button>
-  <hr>
+  <div class="demo">
+    <h1>Demo组件</h1>
+  </div>
 </template>
 
 <script>
@@ -11,6 +12,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .demo {
+    background-color: lightBlue;
+  }
 </style>
