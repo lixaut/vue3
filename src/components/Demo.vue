@@ -4,7 +4,6 @@
 </template>
 
 <script>
-import {  } from '@vue/reactivity'
 export default {
   name: 'Demo',
   setup() {
